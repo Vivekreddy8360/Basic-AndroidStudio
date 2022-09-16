@@ -110,8 +110,10 @@ public class MainActivity extends AppCompatActivity {
 }
 
 ## OUTPUT:
+
 ![vivek2a](https://user-images.githubusercontent.com/94525701/190564590-53f27866-0cb1-486b-b629-921bb1bf137e.png)
-![vivek2a 1](https://user-images.githubusercontent.com/94525701/190564625-3ae1d504-9cdc-40d0-9195-c95cafe52d01.png
+
+![vivek2a 1](https://user-images.githubusercontent.com/94525701/190564625-3ae1d504-9cdc-40d0-9195-c95cafe52d01.png)
 
 
 
