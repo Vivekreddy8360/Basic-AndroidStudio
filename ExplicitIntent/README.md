@@ -38,6 +38,72 @@ Registeration Number :212221240030
 ### MainActivity.java
 
 ```
+package com.example.a2b;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+
+public class MainActivity extends AppCompatActivity {
+
+    EditText edt1;
+    Button btn1;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        edt1 = findViewById(R.id.edt1);
+        btn1 = findViewById(R.id.btn1);
+        Intent i = new Intent(MainActivity.this,SecondActivity.class);
+        btn1.setOnClickListener(View->{
+            i.putExtra("number",edt1.getText().toString());
+            startActivity(i);
+        });
+
+    }
+}
+```
+## SecondActivity.java
+```
+package com.example.a2b;
+
+import android.os.Bundle;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class SecondActivity extends AppCompatActivity {
+    TextView txt2;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_second);
+
+        Bundle b = getIntent().getExtras();
+
+        int no = Integer.parseInt(b.getString("number"));
+        long f=1;
+
+        for(int i=no; i>0; i--)
+        {
+            f = f * i;
+        }
+
+        txt2 = findViewById(R.id.txt2);
+        txt2.setText("Factorial of " + no + " is " + f);
+    }
+
+}
+```
+## activity_main.xml
+```
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -45,75 +111,54 @@ Registeration Number :212221240030
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
-    <TextView
-        android:id="@+id/txtView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Enter the website link"
-
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="300dp"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        />
     <EditText
-        android:id="@+id/edit1"
-        android:layout_height="40dp"
-        android:layout_width="250dp"
-        android:hint="Enter here"
-        android:layout_below="@+id/txtView1"
-        android:layout_marginTop="20dp"
+        android:id="@+id/edt1"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
         android:layout_centerHorizontal="true"
-        />
+        android:hint="Enter a number"
+        android:textAlignment="center"
+        android:inputType="number"
+        android:layout_marginTop="220dp"
+        android:textStyle="bold"
+        android:textSize="30sp"/>
+
     <Button
-        android:id="@+id/Button1"
+        android:id="@+id/btn1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Search"
-        android:layout_below="@+id/edit1"
+        android:layout_below="@+id/edt1"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="50dp"
+        android:text="Factorial" />
 
 </RelativeLayout>
 ```
-## activity_main.xml
+## activity_second.xml
 ```
-package com.example.exp2;
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.widget.Button;
-import android.widget.EditText;
-import android.net.Uri;
-
-public class MainActivity extends AppCompatActivity {
-        EditText edit1;
-        Button Button1;
-
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-                super.onCreate(savedInstanceState);
-                setContentView(R.layout.activity_main);
-                edit1 = findViewById(R.id.edit1);
-                Button1 = findViewById(R.id.Button1);
-
-                Button1.setOnClickListener(view ->{
-                        String  url = edit1.getText().toString();
-                        Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse(url));
-                        startActivity(intent);
-                });
-
-        }
-}
+    <TextView
+        android:id="@+id/txt2"
+        android:layout_width="500dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        />
+</RelativeLayout>
 ```
 ## OUTPUT:
-![vivek2a](https://user-images.githubusercontent.com/94525701/190563878-3545893e-398d-494d-b092-c5f2ba7c4313.png)
 
-![vivek2a 1](https://user-images.githubusercontent.com/94525701/190563900-80fb28cc-3b31-4cd8-86fc-5d3ab11f701f.png)
 
+![vivek2b](https://user-images.githubusercontent.com/94525701/190565438-a231b83f-8e8a-4aa2-bee3-ccdc34491850.png)
+![vivek2b 2](https://user-images.githubusercontent.com/94525701/190565578-03412da7-b79a-4492-9e96-c8fa765a1817.png)
+![exp2b 2](https://user-images.githubusercontent.com/94525701/190565668-0f27b670-43c6-4ad5-987c-df95387f4140.png)
 
 
 
