@@ -4,7 +4,7 @@
 Developed by: M.vivek reddy
 Rgistration Number: 212221240030
 ```
-## MainActiviity.java
+## MainActivity.java
 ```
 package com.example.activitylifecycle;
 
