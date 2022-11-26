@@ -16,8 +16,8 @@ Android Studio(Min. required Artic Fox)
 ```
 /*
 Program to create and design an android application to draw a shapes using 3D graphics with openGL ES.
-Developed by:D.Amarnath Reddy
-Registeration Number : 212221240012
+Developed by:M.Vivek Redddy
+Registeration Number : 212221240030
 */
 ```
 
