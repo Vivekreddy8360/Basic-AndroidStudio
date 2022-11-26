@@ -31,7 +31,7 @@ Step 7: Save and run the application.
 /*
 Program to create and design an android application that draws basic graphical primitives on the screen.
 Developed by:M.Vivek REddy
-Registeration Number :212221240012
+Registeration Number :212221240030
 */
 ```
 ### MainActivity.java
